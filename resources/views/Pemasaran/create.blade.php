@@ -13,8 +13,8 @@
     <form action="{{ route('pemasaran_store') }}" method="POST">
         {{ csrf_field() }}
         <select name="id_user" id="id_user">
-            @foreach ($data as $d)
-                <option value="{{$d->id_user}}">{{$d->name}}</option>
+            @foreach ($user as $d)
+                <option value="{{$d->id}}">{{$d->name}}</option>
             @endforeach
         </select>
         <input type="text" name="id_lokasi" placeholder="lokasi">

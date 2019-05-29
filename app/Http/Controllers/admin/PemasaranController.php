@@ -10,16 +10,18 @@ class PemasaranController extends Controller
 {
     public function index(){
         $data['pemasaran'] = Pemasaran::all();
+        
         return view('Pemasaran.index', $data);
     }
 
     public function create(){
-        $data = User::all();
-        return view('Pemasaran.create', compact('data'));
+        $data['user'] = User::all();
+        return view('Pemasaran.create', $data);
     }
 
     public function store(Request $request){
         $pemasaran = new Pemasaran;
+        
         $pemasaran->id_user = $request->id_user;
         $pemasaran->id_lokasi = $request->id_lokasi;
         $pemasaran->waktu_pemasaran = $request->waktu_pemasaran;
@@ -30,12 +32,15 @@ class PemasaranController extends Controller
 
     public function edit($id){
         $data['pemasaran'] = Pemasaran::find($id);
+        $data['user'] = Pemasaran::all();
+
         return view('Pemasaran.edit', $data);
 
     }
 
     public function update($id, Request $request){
-        $lokasi = Pemasaran::find($id);
+        $pemasaran = Pemasaran::find($id);
+
         $pemasaran->id_user = $request->id_user;
         $pemasaran->id_lokasi = $request->id_lokasi;
         $pemasaran->waktu_pemasaran = $request->waktu_pemasaran;

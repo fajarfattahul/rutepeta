@@ -27,7 +27,7 @@
         @foreach ($pemasaran as $pms)
             <tr>
                 <td>{{$no++}}</td>
-                <td>{{$pms->id_user}}</td>
+                <td>{{$pms->id_user}}</td>                    
                 <td>{{$pms->id_lokasi}}</td>
                 <td>{{$pms->waktu_pemasaran}}</td>
                 <td>

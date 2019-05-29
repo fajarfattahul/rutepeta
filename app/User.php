@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'email', 'password', 'jabatan', 'jk',
+        'name', 'username', 'jabatan', 'jk'
     ];
 
     /**
@@ -38,6 +38,6 @@ class User extends Authenticatable
     ];
 
     public function pemasaran(){
-        return $this ->hasMany('App\Pemasaran', 'id_user');
+        return $this ->hasMany(Pemasaran::class, 'name');
     }
 }
