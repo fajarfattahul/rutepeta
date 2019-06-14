@@ -9,6 +9,6 @@ class Lokasi extends Model
     protected $table = 'lokasi'; 
 
     public function pemasaran(){
-        return $this->belongTo(Pemasaran::class);
+        return $this->hasMany(Pemasaran::class);
     }
 }

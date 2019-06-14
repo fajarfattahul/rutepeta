@@ -38,6 +38,6 @@ class User extends Authenticatable
     ];
 
     public function pemasaran(){
-        return $this ->hasMany(Pemasaran::class, 'name');
+        return $this ->hasMany(Pemasaran::class);
     }
 }

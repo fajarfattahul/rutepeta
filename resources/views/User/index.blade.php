@@ -4,40 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <title>User Index</title>
 </head>
 <body>
-    <h1>Selamat Datang</h1>
+    <div class="containe">
+        <div class="row">
+            <div class="container">
+                <a href="{{ route('user_create') }}" class="btn btn-primary mb-2">Tambah Data</a>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Jabatan</th>
+                            <th scope="col">Jenis Kelamin</th>
+                            <th scope="col">Aksi</th>
+                        </tr>
+                    </thead>
 
-    <a href="{{ route('user_create') }}">Tambah Data</a>
+                        <?php
+                            $no = 1;
+                        ?>
 
-    <table border="1" cellpadding="1" cellspacing="0">
-        <tr>
-            <td>No</td>
-            <td>Nama</td>
-            <td>Email</td>
-            <td>Jabatan</td>
-            <td>Jenis Kelamin</td>
-            <td>Action</td>
-        </tr>
+                    @foreach ($users as $us)
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{$no++}}</th>
+                                <td>{{$us->name}}</td>
+                                <td>{{$us->email}}</td>
+                                <td>{{$us->jabatan}}</td>
+                                <td>{{$us->jk}}</td>
+                                <td>
+                                    <a href="{{ route('user_edit', ['id' => $us->id]) }}" class="btn btn-light">Edit</a>
+                                    <a href="{{ route('user_delete', ['id' => $us->id]) }}" class="btn btn-danger">Hapus</a>
+                                </td>
+                            </tr>
+                        </tbody> 
+                    @endforeach
+                </table>
+            </div>
+        </div>
+    </div>
 
-            <?php
-                $no = 1;
-            ?>
-
-        @foreach ($users as $us)
-            <tr>
-                <td>{{$no++}}</td>
-                <td>{{$us->name}}</td>
-                <td>{{$us->email}}</td>
-                <td>{{$us->jabatan}}</td>
-                <td>{{$us->jk}}</td>
-                <td>
-                    <a href="{{ route('user_edit', ['id' => $us->id]) }}">Edit</a>
-                    <a href="{{ route('user_delete', ['id' => $us->id]) }}">Hapus</a>
-                </td>
-            </tr>
-        @endforeach
-    </table>
 </body>
 </html>

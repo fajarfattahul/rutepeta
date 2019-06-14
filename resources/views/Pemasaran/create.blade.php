@@ -17,7 +17,11 @@
                 <option value="{{$d->id}}">{{$d->name}}</option>
             @endforeach
         </select>
-        <input type="text" name="id_lokasi" placeholder="lokasi">
+        <select name="id_lokasi" id="id_lokasi">
+            @foreach ($lokasi as $d)
+                <option value="{{$d->id}}">{{$d->nama_lokasi}}</option>
+            @endforeach
+        </select>
         <input type="date" name="waktu_pemasaran" placeholder="waktu">
 
         <button>Simpan</button>

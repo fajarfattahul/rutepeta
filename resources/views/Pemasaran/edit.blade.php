@@ -10,15 +10,18 @@
     
     <h1>Edit Data</h1>
     
-    <form action="{{ route('user_update', ['id' => $pemasaran->id]) }}" method="POST">
+    <form action="{{ route('pemasaran_update', ['id' => $pemasaran->id]) }}" method="POST">
         @csrf
         <select name="id_user" id="id_user">
             @foreach ($user as $d)
-                <option value="{{$d->id}}">{{$d->id_user}}</option>
+                <option value="{{$d->id}}">{{$d->name}}</option>
             @endforeach
-        </select>      
-        {{-- <input type="text" name="id_user" placeholder="user" value="{{$pemasaran->id_user}}"> --}}
-        <input type="text" name="id_lokasi" placeholder="lokasi" value="{{$pemasaran->id_lokasi}}">
+        </select>
+        <select name="id_lokasi" id="id_lokasi">
+            @foreach ($lokasi as $d)
+                <option value="{{$d->id}}">{{$d->nama_lokasi}}</option>
+            @endforeach
+        </select>
         <input type="date" name="waktu_pemasaran" placeholder="waktu" value="{{$pemasaran->waktu_pemasaran}}">
         
         <button>Simpan</button>

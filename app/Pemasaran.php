@@ -13,6 +13,14 @@ class Pemasaran extends Model
     ];
 
     public function user(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'id_user','id');
+    }
+
+    public function lokasi(){
+        return $this->belongsTo(Lokasi::class, 'id_lokasi', 'id');
+    }
+
+    public function laporan(){
+        return $this->hasOne(Laporan::class);
     }
 }

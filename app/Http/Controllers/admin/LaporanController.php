@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Laporan;
+use App\Pemasaran;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class LaporanController extends Controller
 {
     public function index(){
-        $data['laporan'] = Laporan::all();
+        $data['laporan'] = Laporan::with('pemasaran')->get();
         return view('Laporan.index', $data);
     }
 

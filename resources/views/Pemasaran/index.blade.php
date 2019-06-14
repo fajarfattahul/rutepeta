@@ -27,8 +27,8 @@
         @foreach ($pemasaran as $pms)
             <tr>
                 <td>{{$no++}}</td>
-                <td>{{$pms->id_user}}</td>                    
-                <td>{{$pms->id_lokasi}}</td>
+                <td>{{$pms->user->name}}</td>                    
+                <td>{{$pms->lokasi->nama_lokasi}}</td>
                 <td>{{$pms->waktu_pemasaran}}</td>
                 <td>
                     <a href="{{ route('pemasaran_edit', ['id' => $pms->id]) }}">Edit</a>

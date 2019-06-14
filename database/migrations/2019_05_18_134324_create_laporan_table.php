@@ -13,10 +13,10 @@ class CreateLaporanTable extends Migration
      */
     public function up()
     {
-        Schema::create('laporan', function (Blueprint $table) {
+        Schema::create('laporan_pemasaran', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_pemasaran');
-            $table->string('keterangan');            
+            $table->enum('ket', ['selesai', 'belum']);
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateLaporanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('laporan');
+        Schema::dropIfExists('laporan_pemasaran');
     }
 }
