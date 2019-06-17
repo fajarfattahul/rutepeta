@@ -65,6 +65,24 @@ Route::group(['namespace' => 'admin'], function () {
     });
     
 });
+
+//CRUD Sales
+Route::group(['namespace' => 'sales'], function () {
+    //Sales
+    Route::group(['prefix' => 'sales'], function(){
+        //Pemasaran
+        Route::group(['prefix' => 'index'], function(){
+            Route::get('/', 'salesController@index')->name('sales_home');
+            // Route::get('/create', 'sales_pemasaran@create')->name('sales_create');
+            // Route::post('/store', 'sales_pemasaran@store')->name('sales_store');
+            // Route::get('/edit/{id?}', 'sales_pemasaran@edit')->name('sales_edit');
+            // Route::post('/update/{id?}', 'sales_pemasaran@update')->name('sales_update');
+            // Route::get('/delete/{id?}', 'sales_pemasaran@delete')->name('sales_delete');
+        });
+    });
+    
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

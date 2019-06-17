@@ -16,7 +16,7 @@ class CreatePemasaranLapTable extends Migration
         Schema::create('pemasaran_lap', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('id_pemasaran');
-            $table->enum('ket', ['selesai','batal']);
+            $table->enum('ket', ['proses','selesai','batal']);
             $table->timestamps();
         });
     }
