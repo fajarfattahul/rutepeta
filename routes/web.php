@@ -54,13 +54,13 @@ Route::group(['namespace' => 'admin'], function () {
         });
 
         //Laporan
-        Route::group(['prefix' => 'laporan'], function(){
-            Route::get('/', 'LaporanController@index')->name('laporan_home');
-            Route::get('/create', 'LaporanController@create')->name('laporan_create');
-            Route::post('/store', 'LaporanController@store')->name('laporan_store');
-            Route::get('/edit/{id?}', 'LaporanController@edit')->name('laporan_edit');
-            Route::post('/update/{id?}', 'LaporanController@update')->name('laporan_update');
-            Route::get('/delete/{id?}', 'LaporanController@delete')->name('laporan_delete');
+        Route::group(['prefix' => 'pemasaran_lap'], function(){
+            Route::get('/', 'Pemasaran_lapController@index')->name('pemasaran_lap_home');
+            Route::get('/create', 'Pemasaran_lapController@create')->name('pemasaran_lap_create');
+            Route::post('/store', 'Pemasaran_lapController@store')->name('pemasaran_lap_store');
+            Route::get('/edit/{id?}', 'Pemasaran_lapController@edit')->name('pemasaran_lap_edit');
+            Route::post('/update/{id?}', 'Pemasaran_lapController@update')->name('pemasaran_lap_update');
+            Route::get('/delete/{id?}', 'Pemasaran_lapController@delete')->name('pemasaran_lap_delete');
         });
     });
     

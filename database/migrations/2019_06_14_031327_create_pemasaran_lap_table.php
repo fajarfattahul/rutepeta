@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLaporanTable extends Migration
+class CreatePemasaranLapTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateLaporanTable extends Migration
      */
     public function up()
     {
-        Schema::create('laporan_pemasaran', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('pemasaran_lap', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->integer('id_pemasaran');
-            $table->enum('ket', ['selesai', 'belum']);
+            $table->enum('ket', ['selesai','batal']);
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateLaporanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('laporan_pemasaran');
+        Schema::dropIfExists('pemasaran_lap');
     }
 }

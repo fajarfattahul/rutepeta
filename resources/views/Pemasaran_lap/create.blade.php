@@ -10,10 +10,9 @@
     
     <h1>Tambah Data</h1>
     
-    <form action="{{ route('laporan_store') }}" method="POST">
+    <form action="{{ route('pemasaran_lap_store') }}" method="POST">
         {{ csrf_field() }}
-        <input type="text" name="id_pemasaran" placeholder="Pemasaran">
-        <input type="text" name="keterangan" placeholder="Keterangan">
+        
 
         <button>Simpan</button>
     </form>
