@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('partial', function(){
+    return view('index');
+});
+
 Route::get('/peta', 'PetaController@index')->name('indexpeta');
 
 Route::get('/maps', 'MapsController@index')->name('maps');
