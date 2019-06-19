@@ -15,13 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('partial', function(){
-    return view('index');
-});
-
 Route::get('/peta', 'PetaController@index')->name('indexpeta');
 
 Route::get('/maps', 'MapsController@index')->name('maps');
+Route::get('/partial', 'MapsController@partial')->name('partial');
 
 //CRUD Admin
 Route::group(['namespace' => 'admin'], function () {
@@ -57,15 +54,6 @@ Route::group(['namespace' => 'admin'], function () {
             Route::get('/delete/{id?}', 'PemasaranController@delete')->name('pemasaran_delete');
         });
 
-        //Laporan
-        Route::group(['prefix' => 'pemasaran_lap'], function(){
-            Route::get('/', 'Pemasaran_lapController@index')->name('pemasaran_lap_home');
-            Route::get('/create', 'Pemasaran_lapController@create')->name('pemasaran_lap_create');
-            Route::post('/store', 'Pemasaran_lapController@store')->name('pemasaran_lap_store');
-            Route::get('/edit/{id?}', 'Pemasaran_lapController@edit')->name('pemasaran_lap_edit');
-            Route::post('/update/{id?}', 'Pemasaran_lapController@update')->name('pemasaran_lap_update');
-            Route::get('/delete/{id?}', 'Pemasaran_lapController@delete')->name('pemasaran_lap_delete');
-        });
     });
     
 });
@@ -90,15 +78,3 @@ Route::group(['namespace' => 'sales'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/admin', function(){
-    return view('admin');
-})->name('adminpage');
-
-Route::get('admin-login','Auth\AdminLoginController@showLoginForm');
-
-Route::post('admin-login', ['as' => 'admin-login', 'uses' => 'Auth\AdminLoginController@login']);
-
-Route::get('admin-register','Auth\AdminLoginController@showRegisterPage');
-
-Route::post('admin-register', 'Auth\AdminLoginController@register')->name('admin.register');

@@ -20,7 +20,4 @@ class Pemasaran extends Model
         return $this->belongsTo(Lokasi::class, 'id_lokasi', 'id');
     }
 
-    public function pemasaran_lap(){
-        return $this->hasOne(Laporan::class);
-    }
 }

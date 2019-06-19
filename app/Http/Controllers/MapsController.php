@@ -10,4 +10,8 @@ class MapsController extends Controller
     {
         return view('peta.maps');
     }
+
+    public function partial(){
+        return view('partials.master');
+    }
 }
