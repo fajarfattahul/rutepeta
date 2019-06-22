@@ -1,27 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User Create</title>
-</head>
-<body>
-    
-    <h1>Tambah Data</h1>
-    
-    <form action="{{ route('lokasi_update', ['id' => $lokasi->id]) }}" method="POST">
-        @csrf        
-        <input type="text" name="nama_lokasi" placeholder="Nama Lokasi" value="{{$lokasi->nama_lokasi}}">
-        <select name="wilayah" id="">
-            <option value="utara">UTARA</option>
-            <option value="selatan">SELATAN</option>
-        </select>
-        <input type="text" name="latitude" placeholder="Latitude" value="{{$lokasi->latitude}}">
-        <input type="text" name="longitude" placeholder="Longitude" value="{{$lokasi->longitude}}">
+@extends('partials.master')
 
-        <button>Simpan</button>
-    </form>
+@section('content')
+    <div class="row">
+        <div class="col-xs-11">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Edit Data Pegawai</h3>
+                </div>
 
-</body>
-</html>
+                <form action="{{ route('lokasi_update', ['id' => $lokasi->id]) }}" method="POST">
+                    @csrf
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="namalokasi">Nama lokasi_update</label>
+                            <input type="text" class="form-control" name="nama_lokasi" id="namalokasi" placeholder="Nama Lokasi" value="{{$lokasi->nama_lokasi}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="namawilayah">Wilayah</label>
+                            <select class="form-control select2" name="wilayah" id="namawilayah" value="{{$lokasi->wilayah}}">
+                                    <option value="utara">UTARA</option>
+                                    <option value="selatan">SELATAN</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="latitudelokasi">Latitude</label>
+                            <input type="text" class="form-control" name="latitude" id="latitudelokasi" placeholder="Latitude" value="{{$lokasi->latitude}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="longitudelokasi">Longitude</label>
+                            <input type="text" class="form-control" name="longitude" id="longitudelokasi" placeholder="Longitude" value="{{$lokasi->longitude}}">
+                        </div>
+                    </div>
+                    
+                    <div class="box-footer">
+                        <button class="btn btn-primary">Simpan</button>
+                        <a href="{{ route('lokasi_home') }}" class="btn btn-light">Kembali</a>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+@endsection

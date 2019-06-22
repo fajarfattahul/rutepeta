@@ -20,7 +20,6 @@ class UserController extends Controller
     public function store(Request $request){
         $user = new User;
         $user->name = $request->name;
-        $user->username = $request->username;
         $user->email = $request->email;
         $user->password = $request->password;
         $user->jabatan = $request->jabatan;
@@ -41,7 +40,6 @@ class UserController extends Controller
         $us = User::find($id);
         
         $us->name = $request->name;
-        $us->username = $request->username;
         $us->email = $request->email;
         $us->password = $request->password;
         $us->jabatan = $request->jabatan;

@@ -9,7 +9,7 @@ class Pemasaran extends Model
     protected $table = 'pemasaran';  
     
     protected $fillable = [
-        'id_user', 'id_lokasi', 'waktu_pemasaran'
+        'id_user', 'id_lokasi', 'waktu_pemasaran', 'ket'
     ];
 
     public function user(){

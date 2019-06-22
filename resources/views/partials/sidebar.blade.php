@@ -9,7 +9,7 @@
             </div>
             <div class="pull-left info">
 				<p>Alexander Pierce</p>
-    			<a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
         <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -17,10 +17,21 @@
         <li class="header">MENU</li>
 			<li class="active treeview menu-open">
 				<ul class="treeview-menu">
-					<li><a href="{{ route('user_home') }}"><i class="fa fa-users"></i> USER </a></li>
-					<li><a href="{{ route('lokasi_home') }}"><i class="fa fa-street-view"></i> LOKASI </a></li>
-					<li><a href="{{route('pemasaran_home') }}"><i class="fa fa-map"></i> PEMASARAN </a></li>
-					<li><a href="#"><i class="fa fa-file-text"></i> LAPORAN </a></li>
+					<li class="">
+                        <a href="{{ route('user_home') }}"><i class="fa fa-users"></i> USER </a>
+                    </li>
+					<li class="">
+                        <a href="{{ route('lokasi_home') }}"><i class="fa fa-street-view"></i> LOKASI </a>
+                    </li>
+					<li class="">
+                        <a href="{{route('pemasaran_home') }}"><i class="fa fa-map"></i> PEMASARAN </a>
+                    </li>
+					<li class="">
+                        <a href="#"><i class="fa fa-file-text"></i> LAPORAN </a>
+                    </li>
+                    <li class="">
+                        <a href="#"><i class="fa fa-file-text"></i> LAPORAN PEMASARAN</a>
+                    </li>
 				</ul>
             </li>
         </ul>

@@ -31,6 +31,7 @@ class PemasaranController extends Controller
         $pemasaran->id_user = $request->id_user;
         $pemasaran->id_lokasi = $request->id_lokasi;
         $pemasaran->waktu_pemasaran = $request->waktu_pemasaran;
+        $pemasaran->ket = 'proses';
         $pemasaran->save();
         
         return redirect(route('pemasaran_home'));
@@ -51,6 +52,7 @@ class PemasaranController extends Controller
         $pemasaran->id_user = $request->id_user;
         $pemasaran->id_lokasi = $request->id_lokasi;
         $pemasaran->waktu_pemasaran = $request->waktu_pemasaran;
+        $pemasaran->ket = 'proses';
         $pemasaran->save();
 
         return redirect(route('pemasaran_home'));
