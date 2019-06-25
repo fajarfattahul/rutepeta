@@ -27,10 +27,10 @@
                         <a href="{{route('pemasaran_home') }}"><i class="fa fa-map"></i> PEMASARAN </a>
                     </li>
 					<li class="">
-                        <a href="#"><i class="fa fa-file-text"></i> LAPORAN </a>
+                        <a href="{{route('laporan_home')}}"><i class="fa fa-file-text"></i> LAPORAN </a>
                     </li>
                     <li class="">
-                        <a href="#"><i class="fa fa-file-text"></i> LAPORAN PEMASARAN</a>
+                        <a href="{{route('lapar_home')}}"><i class="fa fa-file-text"></i> LAPORAN PEMASARAN</a>
                     </li>
 				</ul>
             </li>

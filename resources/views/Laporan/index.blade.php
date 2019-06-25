@@ -3,12 +3,10 @@
 @section('content')
     
     <div class="row">
-        <div class="col-xs-12">
-            <a class="btn btn-primary" href="{{ route('pemasaran_create') }}">Tambah Data</a>            
-            <br><br>
+        <div class="col-xs-12">           
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Data Pemasaran</h3>
+                    <h3 class="box-title">Data Laporan</h3>
             
                     <div class="box-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
@@ -44,8 +42,7 @@
                                 <td>{{$pms->waktu_pemasaran}}</td>
                                 <td>{{$pms->ket}}</td>
                                 <td>
-                                    <a class="btn btn-light" href="{{ route('pemasaran_edit', ['id' => $pms->id]) }}">Edit</a>
-                                    <a class="btn btn-danger" href="{{ route('pemasaran_delete', ['id' => $pms->id]) }}">Hapus</a>
+                                    <a class="btn btn-primary" href="{{ route('laporan_edit', ['id' => $pms->id]) }}">Edit</a>
                                 </td>
                             </tr>
                             @endforeach

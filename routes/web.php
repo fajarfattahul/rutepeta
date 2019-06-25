@@ -54,25 +54,16 @@ Route::group(['namespace' => 'admin'], function () {
             Route::get('/delete/{id?}', 'PemasaranController@delete')->name('pemasaran_delete');
         });
 
-    });
-    
-});
-
-//CRUD Sales
-Route::group(['namespace' => 'sales'], function () {
-    //Sales
-    Route::group(['prefix' => 'sales'], function(){
-        //Pemasaran
-        Route::group(['prefix' => 'index'], function(){
-            Route::get('/', 'salesController@index')->name('sales_home');
-            // Route::get('/create', 'sales_pemasaran@create')->name('sales_create');
-            // Route::post('/store', 'sales_pemasaran@store')->name('sales_store');
-            // Route::get('/edit/{id?}', 'sales_pemasaran@edit')->name('sales_edit');
-            // Route::post('/update/{id?}', 'sales_pemasaran@update')->name('sales_update');
-            // Route::get('/delete/{id?}', 'sales_pemasaran@delete')->name('sales_delete');
+        Route::group(['prefix' => 'laporan'], function(){
+            Route::get('/', 'LaporanController@index')->name('laporan_home');
+            Route::get('/edit/{id?}', 'LaporanController@edit')->name('laporan_edit');
+            Route::post('/update/{id?}', 'LaporanController@update')->name('laporan_update');
         });
-    });
-    
+
+        Route::group(['prefix' => 'laporan_pemasaran'], function(){
+            Route::get('/', 'LaparController@index')->name('lapar_home');
+        });
+    });    
 });
 
 Auth::routes();
