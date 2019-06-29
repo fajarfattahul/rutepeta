@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,13 +14,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/beranda', function () {
+    return view('beranda');
+});
+
 Route::get('/peta', 'PetaController@index')->name('indexpeta');
 
 Route::get('/maps', 'MapsController@index')->name('maps');
 Route::get('/partial', 'MapsController@partial')->name('partial');
 
 //CRUD Admin
-Route::group(['namespace' => 'admin'], function () {
+Route::group(['namespace' => 'admin', 'middleware' => 'admin'], function () {
     //Admin
     Route::group(['prefix' => 'admin'], function(){
         //User

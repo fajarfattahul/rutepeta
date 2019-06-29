@@ -8,7 +8,7 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Tambah Data Pegawai</h3>
+                            <h3 class="box-title">Tambah Data Lokasi</h3>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
@@ -28,12 +28,13 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Latitude</label>
-                                    <input class="form-control" type="text" name="latitude" placeholder="Nama Lokasi">
+                                    <input class="form-control" type="text" id="latitude" name="latitude" placeholder="Nama Lokasi">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Longitude</label>
-                                    <input class="form-control" type="text" name="longitude" placeholder="Nama Lokasi">
+                                    <input class="form-control" type="text" id="longitude" name="longitude" placeholder="Nama Lokasi">
                                 </div>
+                                <div class="form-group" id="locationPicker" style="width: auto; height: 300px;"></div>
                             </div>
                             <!-- /.box-body -->
                             <div class="box-footer">

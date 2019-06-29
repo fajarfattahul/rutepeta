@@ -17,8 +17,8 @@ class CreateLokasiTable extends Migration
             $table->increments('id');            
             $table->string('nama_lokasi');
             $table->enum('wilayah', ['utara', 'selatan']);
-            $table->string('latitude', 15)->nullable();
-            $table->string('longitude', 15)->nullable();
+            $table->string('latitude', 30)->nullable();
+            $table->string('longitude', 30)->nullable();
             $table->timestamps();
         });
     }

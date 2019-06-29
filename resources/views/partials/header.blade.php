@@ -18,14 +18,23 @@
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <!-- User Account: style can be found in dropdown.less -->
-                <li class="dropdown user user-menu">
+                {{-- <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <span class="hidden-xs">Alexander Pierce</span>
+                        <span class="hidden-xs">{{ Auth::user()->name }}</span>
                     </a>
-                </li>
+                </li> --}}
                 <!-- Control Sidebar Toggle Button -->
-                <li>
-                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-sign-out"></i></a>
+                <li class="nav-item">
+                    <a href="{{ route('logout') }}" data-toggle="control-sidebar" 
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                        <i class="fa fa-sign-out"></i>
+                    </a>
+                    
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                
                 </li>
             </ul>
         </div>
