@@ -24,12 +24,13 @@
                         </div>
                         <div class="form-group">
                             <label for="latitudelokasi">Latitude</label>
-                            <input type="text" class="form-control" name="latitude" id="latitudelokasi" placeholder="Latitude" value="{{$lokasi->latitude}}">
+                            <input type="text" class="form-control" id="latitude" name="latitude" placeholder="Latitude" value="{{$lokasi->latitude}}">
                         </div>
                         <div class="form-group">
                             <label for="longitudelokasi">Longitude</label>
-                            <input type="text" class="form-control" name="longitude" id="longitudelokasi" placeholder="Longitude" value="{{$lokasi->longitude}}">
+                            <input type="text" class="form-control" id="longitude" name="longitude" placeholder="Longitude" value="{{$lokasi->longitude}}">
                         </div>
+                        <div class="form-group" id="locationPicker" style="width: auto; height: 300px;"></div>
                     </div>
                     
                     <div class="box-footer">
