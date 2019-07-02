@@ -1,43 +1,23 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\sales;
+
 use App\Pemasaran;
 use App\User;
 use App\Lokasi;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class PemasaranController extends Controller
+class LaporanController extends Controller
 {
     public function index(){
         $data['jabatan'] = Auth::user()->jabatan;
         $data['pemasaran'] = Pemasaran::with('user', 'lokasi')->get();
 
-        return view('Pemasaran.index', $data);
+        return view('Laporan.index', $data);
         // return \response($data);
-    }
-
-    public function create(){
-        $data['jabatan'] = Auth::user()->jabatan;
-        $data['user'] = User::all();
-        $data['lokasi'] = Lokasi::all();
-        // return \response($data);
-        
-        return view('Pemasaran.create', $data);
-    }
-
-    public function store(Request $request){
-
-        $pemasaran = new Pemasaran;
-
-        $pemasaran->id_user = $request->id_user;
-        $pemasaran->id_lokasi = $request->id_lokasi;
-        $pemasaran->waktu_pemasaran = $request->waktu_pemasaran;
-        $pemasaran->ket = 'proses';
-        $pemasaran->save();
-        
-        return redirect(route('pemasaran_home'));
     }
 
     public function edit($id){
@@ -46,7 +26,7 @@ class PemasaranController extends Controller
         $data['user'] = User::all();
         $data['lokasi'] = Lokasi::all();
         // return \response($data);
-        return view('Pemasaran.edit', $data);
+        return view('Laporan.edit', $data);
 
     }
 
@@ -56,16 +36,16 @@ class PemasaranController extends Controller
         $pemasaran->id_user = $request->id_user;
         $pemasaran->id_lokasi = $request->id_lokasi;
         $pemasaran->waktu_pemasaran = $request->waktu_pemasaran;
-        $pemasaran->ket = 'proses';
+        $pemasaran->ket = $request->ket;
         $pemasaran->save();
 
-        return redirect(route('pemasaran_home'));
+        return redirect(route('laporan_home'));
 
     }
 
     public function delete($id){
         Pemasaran::where('id', $id)->delete();
 
-        return redirect()->route('pemasaran_home');
+        return redirect()->route('laporan_home');
     }
 }

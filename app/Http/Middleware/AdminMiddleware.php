@@ -18,6 +18,9 @@ class AdminMiddleware
     public function handle($request, Closure $next)
     {
         if (Auth::user()->jabatan != 'admin') {
+            if(Auth::user()->jabatan == "sales") {
+                return redirect(route('laporan_home'));
+            } 
             return redirect('/');
         }
 

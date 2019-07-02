@@ -3,18 +3,21 @@
 namespace App\Http\Controllers\admin;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
     public function index(){
+        $data['jabatan'] = Auth::user()->jabatan;
         $data['users'] = User::all();
 
         return view('User.index', $data);
     }
 
     public function create(){
+        $data['jabatan'] = Auth::user()->jabatan;        
         return view('User.create');
     }
 
@@ -31,7 +34,7 @@ class UserController extends Controller
     }
 
     public function edit($id){
-
+        $data['jabatan'] = Auth::user()->jabatan;
         $data['users'] = User::find($id);
         return view('User.edit', $data);
 

@@ -69,6 +69,19 @@ Route::group(['namespace' => 'admin', 'middleware' => 'admin'], function () {
     });    
 });
 
+//CRUD Sales
+Route::group(['namespace' => 'sales'], function () {
+    //Sales
+    Route::group(['prefix' => 'sales'], function(){
+        //Laporan
+        Route::group(['prefix' => 'laporan'], function(){
+            Route::get('/', 'LaporanController@index')->name('laporan_home');
+            Route::get('/edit/{id?}', 'LaporanController@edit')->name('laporan_edit');
+            Route::post('/update/{id?}', 'LaporanController@update')->name('laporan_update');
+        });
+    });    
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

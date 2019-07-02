@@ -17,19 +17,19 @@
         <li class="header">MENU</li>
 			<li class="active treeview menu-open">
 				<ul class="treeview-menu">
-					<li class="">
+					<li class="{{ $jabatan == 'admin' ? '' : 'hidden' }}">
                         <a href="{{ route('user_home') }}"><i class="fa fa-users"></i> USER </a>
                     </li>
-					<li class="">
+					<li class="{{ $jabatan == 'admin' ? '' : 'hidden' }}">
                         <a href="{{ route('lokasi_home') }}"><i class="fa fa-street-view"></i> LOKASI </a>
                     </li>
-					<li class="">
+					<li class="{{ $jabatan == 'admin' ? '' : 'hidden' }}">
                         <a href="{{route('pemasaran_home') }}"><i class="fa fa-map"></i> PEMASARAN </a>
                     </li>
-					<li class="">
+					<li class="{{ $jabatan == 'sales' ? '' : 'hidden' }}">
                         <a href="{{route('laporan_home')}}"><i class="fa fa-file-text"></i> LAPORAN </a>
                     </li>
-                    <li class="">
+                    <li class="{{ $jabatan == 'admin' ? '' : 'hidden' }}">
                         <a href="{{route('lapar_home')}}"><i class="fa fa-file-text"></i> LAPORAN PEMASARAN</a>
                     </li>
 				</ul>
