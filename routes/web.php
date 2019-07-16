@@ -47,6 +47,16 @@ Route::group(['namespace' => 'admin', 'middleware' => 'admin'], function () {
             Route::get('/delete/{id?}', 'LokasiController@delete')->name('lokasi_delete');
         });
 
+        //Barang
+        Route::group(['prefix' => 'barang'], function(){
+            Route::get('/', 'BarangController@index')->name('barang_home');
+            Route::get('/create', 'BarangController@create')->name('barang_create');
+            Route::post('/store', 'BarangController@store')->name('barang_store');
+            Route::get('/edit/{id?}', 'BarangController@edit')->name('barang_edit');
+            Route::post('/update/{id?}', 'BarangController@update')->name('barang_update');
+            Route::get('/delete/{id?}', 'BarangController@delete')->name('barang_delete');
+        });
+
         //Pemasaran
         Route::group(['prefix' => 'pemasaran'], function(){
             Route::get('/', 'PemasaranController@index')->name('pemasaran_home');

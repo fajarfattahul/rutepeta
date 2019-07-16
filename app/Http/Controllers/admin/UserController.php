@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\admin;
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -17,8 +17,9 @@ class UserController extends Controller
     }
 
     public function create(){
-        $data['jabatan'] = Auth::user()->jabatan;        
-        return view('User.create');
+        $data['jabatan'] = Auth::user()->jabatan;
+        // return \response($data);        
+        return view('User.create', $data);
     }
 
     public function store(Request $request){

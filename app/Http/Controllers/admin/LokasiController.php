@@ -17,7 +17,7 @@ class LokasiController extends Controller
 
     public function create(){
         $data['jabatan'] = Auth::user()->jabatan;
-        return view('Lokasi.create');
+        return view('Lokasi.create', $data);
     }
 
     public function store(Request $request){

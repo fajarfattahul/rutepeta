@@ -23,6 +23,9 @@
 					<li class="{{ $jabatan == 'admin' ? '' : 'hidden' }}">
                         <a href="{{ route('lokasi_home') }}"><i class="fa fa-street-view"></i> LOKASI </a>
                     </li>
+                    <li class="#">
+                        <a href="{{ route('barang_home') }}"><i class="fa fa-archive"></i> BARANG </a>
+                    </li>
 					<li class="{{ $jabatan == 'admin' ? '' : 'hidden' }}">
                         <a href="{{route('pemasaran_home') }}"><i class="fa fa-map"></i> PEMASARAN </a>
                     </li>
