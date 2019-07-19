@@ -10,11 +10,11 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/Home', function () {
     return view('welcome');
 });
 
-Route::get('/beranda', function () {
+Route::get('/', function () {
     return view('beranda');
 });
 
@@ -88,6 +88,12 @@ Route::group(['namespace' => 'sales'], function () {
             Route::get('/', 'LaporanController@index')->name('laporan_home');
             Route::get('/edit/{id?}', 'LaporanController@edit')->name('laporan_edit');
             Route::post('/update/{id?}', 'LaporanController@update')->name('laporan_update');
+        });
+
+        //Pemesanan
+        Route::group(['prefix' => 'pemesanan'], function(){
+            Route::get('/', 'PemesananController@index')->name('pemesanan_home');
+            Route::get('/create', 'PemesananController@create')->name('pemesanan_create');
         });
     });    
 });

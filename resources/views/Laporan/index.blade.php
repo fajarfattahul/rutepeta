@@ -25,6 +25,7 @@
                                 <th>No</th>
                                 <th>Nama Pegawai</th>
                                 <th>Lokasi</th>
+                                <th>Wilayah</th>
                                 <th>Waktu Pemasaran</th>
                                 <th>Keterangan</th>
                                 <th>Action</th>
@@ -34,17 +35,18 @@
                                 $no = 1;
                             ?>
 
-                            @foreach ($pemasaran as $pms)
-                            <tr>
-                                <td>{{$no++}}</td>
-                                <td>{{$pms->user->name}}</td>                    
-                                <td>{{$pms->lokasi->nama_lokasi}}</td>
-                                <td>{{$pms->waktu_pemasaran}}</td>
-                                <td>{{$pms->ket}}</td>
-                                <td>
-                                    <a class="btn btn-primary" href="{{ route('laporan_edit', ['id' => $pms->id]) }}">Edit</a>
-                                </td>
-                            </tr>
+                            @foreach ($laporan as $lpr)
+                                <tr>
+                                    <td>{{$no++}}</td>
+                                    <td>{{$lpr->user->name}}</td>                    
+                                    <td>{{$lpr->lokasi->nama_lokasi}}</td>
+                                    <td>{{$lpr->lokasi->wilayah}}</td>
+                                    <td>{{$lpr->waktu_pemasaran}}</td>
+                                    <td>{{$lpr->ket}}</td>
+                                    <td>
+                                        <a class="btn btn-primary" href="{{ route('laporan_edit', ['id' => $lpr->id]) }}">Edit</a>
+                                    </td>
+                                </tr>
                             @endforeach
                     </table>
                 </div>

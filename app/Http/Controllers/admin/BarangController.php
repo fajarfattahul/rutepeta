@@ -51,7 +51,7 @@ class BarangController extends Controller
 
     public function delete($id)
     {
-        Lokasi::where('id', $id)->delete();
+        Barang::where('id', $id)->delete();
 
         return redirect()->route('barang_home');
     }

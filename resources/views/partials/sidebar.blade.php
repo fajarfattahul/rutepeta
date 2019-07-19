@@ -23,7 +23,7 @@
 					<li class="{{ $jabatan == 'admin' ? '' : 'hidden' }}">
                         <a href="{{ route('lokasi_home') }}"><i class="fa fa-street-view"></i> LOKASI </a>
                     </li>
-                    <li class="#">
+                    <li class="{{ $jabatan == 'admin' ? '' : 'hidden' }}">
                         <a href="{{ route('barang_home') }}"><i class="fa fa-archive"></i> BARANG </a>
                     </li>
 					<li class="{{ $jabatan == 'admin' ? '' : 'hidden' }}">
@@ -31,6 +31,9 @@
                     </li>
 					<li class="{{ $jabatan == 'sales' ? '' : 'hidden' }}">
                         <a href="{{route('laporan_home')}}"><i class="fa fa-file-text"></i> LAPORAN </a>
+                    </li>
+                    <li class="{{ $jabatan == 'sales' ? '' : 'hidden' }}">
+                        <a href="{{route('pemesanan_home')}}"><i class="fa fa-file-text"></i> PEMESANAN </a>
                     </li>
                     <li class="{{ $jabatan == 'admin' ? '' : 'hidden' }}">
                         <a href="{{route('lapar_home')}}"><i class="fa fa-file-text"></i> LAPORAN PEMASARAN</a>

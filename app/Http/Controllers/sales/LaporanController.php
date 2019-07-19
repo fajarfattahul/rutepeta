@@ -14,7 +14,7 @@ class LaporanController extends Controller
 {
     public function index(){
         $data['jabatan'] = Auth::user()->jabatan;
-        $data['pemasaran'] = Pemasaran::with('user', 'lokasi')->get();
+        $data['laporan'] = Pemasaran::with('lokasi','user')->get();
 
         return view('Laporan.index', $data);
         // return \response($data);

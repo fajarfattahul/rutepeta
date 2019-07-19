@@ -20,4 +20,8 @@ class Pemasaran extends Model
         return $this->belongsTo(Lokasi::class, 'id_lokasi', 'id');
     }
 
+    public function pemesanan(){
+        return $this->hasMany(Pemesanan::class);
+    }
+
 }
