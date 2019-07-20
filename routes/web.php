@@ -67,14 +67,14 @@ Route::group(['namespace' => 'admin', 'middleware' => 'admin'], function () {
             Route::get('/delete/{id?}', 'PemasaranController@delete')->name('pemasaran_delete');
         });
 
-        Route::group(['prefix' => 'laporan'], function(){
-            Route::get('/', 'LaporanController@index')->name('laporan_home');
-            Route::get('/edit/{id?}', 'LaporanController@edit')->name('laporan_edit');
-            Route::post('/update/{id?}', 'LaporanController@update')->name('laporan_update');
-        });
-
+        //laporan pemasaran
         Route::group(['prefix' => 'laporan_pemasaran'], function(){
             Route::get('/', 'LaparController@index')->name('lapar_home');
+        });
+
+        //laporan pemesanan
+        Route::group(['prefix' => 'laporan_pemesanan'], function(){
+            Route::get('/', 'LapemController@index')->name('lapem_home');
         });
     });    
 });
@@ -94,6 +94,19 @@ Route::group(['namespace' => 'sales'], function () {
         Route::group(['prefix' => 'pemesanan'], function(){
             Route::get('/', 'PemesananController@index')->name('pemesanan_home');
             Route::get('/create', 'PemesananController@create')->name('pemesanan_create');
+        });
+    });    
+});
+
+//CRUD Kurir
+Route::group(['namespace' => 'kurir'], function () {
+    //Sales
+    Route::group(['prefix' => 'kurir'], function(){
+        //Laporan
+        Route::group(['prefix' => 'laporan_kurir'], function(){
+            Route::get('/', 'LapkurController@index')->name('lapkur_home');
+            Route::get('/edit/{id?}', 'LapkurController@edit')->name('lapkur_edit');
+            Route::post('/update/{id?}', 'LapkurController@update')->name('lapkur_update');
         });
     });    
 });

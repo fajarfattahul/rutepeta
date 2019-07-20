@@ -6,7 +6,7 @@
         <div class="col-xs-12">           
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Data Laporan Pemasaran</h3>
+                    <h3 class="box-title">Data Laporan Pemesanan</h3>
             
                     <div class="box-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
@@ -25,28 +25,22 @@
                                 <th>No</th>
                                 <th>Nama Pegawai</th>
                                 <th>Lokasi</th>
-                                <th>Wilayah</th>
-                                <th>Waktu Pemasaran</th>
+                                <th>Barang</th>
                                 <th>Keterangan</th>
-                                <th>Action</th>
                             </tr>
 
                             <?php
                                 $no = 1;
                             ?>
 
-                            @foreach ($laporan as $lpr)
-                                <tr>
-                                    <td>{{$no++}}</td>
-                                    <td>{{$lpr->user->name}}</td>                    
-                                    <td>{{$lpr->lokasi->nama_lokasi}}</td>
-                                    <td>{{$lpr->lokasi->wilayah}}</td>
-                                    <td>{{$lpr->waktu_pemasaran}}</td>
-                                    <td>{{$lpr->ket}}</td>
-                                    <td>
-                                        <a class="btn btn-primary" href="{{ route('laporan_edit', ['id' => $lpr->id]) }}">Edit</a>
-                                    </td>
-                                </tr>
+                            @foreach ($pemesanan as $pms)
+                            <tr>
+                                <td>{{$no++}}</td>
+                                <td>{{$pms->user->name}}</td>                    
+                                <td>{{$pms->lokasi->nama_lokasi}}</td>
+                                <td>{{$pms->barang->nama_barang}}</td>
+                                <td>{{$pms->ket}}</td>
+                            </tr>
                             @endforeach
                     </table>
                 </div>

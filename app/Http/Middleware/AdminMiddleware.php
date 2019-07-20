@@ -20,7 +20,9 @@ class AdminMiddleware
         if (Auth::user()->jabatan != 'admin') {
             if(Auth::user()->jabatan == "sales") {
                 return redirect(route('laporan_home'));
-            } 
+            } elseif (Auth::user()->jabatan == "kurir") {
+                return redirect(route('lapkur_home'));
+            }
             return redirect('/');
         }
 

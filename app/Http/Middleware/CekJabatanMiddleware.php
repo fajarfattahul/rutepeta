@@ -17,8 +17,10 @@ class CekJabatanMiddleware
     {
         if (Auth::user()->jabatan == 'admin') {
             return redirect(route('admin_home'));
-        } else {
+        } elseif (Auth::user()->jabatan == 'sales') {
             return redirect(route('sales_home'));
+        } else {
+            return redirect(route('kurir_home'));
         }
 
         return $next($request);

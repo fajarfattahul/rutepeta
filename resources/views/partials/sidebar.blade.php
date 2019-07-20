@@ -36,7 +36,13 @@
                         <a href="{{route('pemesanan_home')}}"><i class="fa fa-file-text"></i> PEMESANAN </a>
                     </li>
                     <li class="{{ $jabatan == 'admin' ? '' : 'hidden' }}">
-                        <a href="{{route('lapar_home')}}"><i class="fa fa-file-text"></i> LAPORAN PEMASARAN</a>
+                        <a href="{{route('lapar_home')}}"><i class="fa fa-file"></i> LAPORAN PEMASARAN</a>
+                    </li>
+                    <li class="{{ $jabatan == 'admin' ? '' : 'hidden' }}">
+                        <a href="{{route('lapem_home')}}"><i class="fa fa-file-text"></i> LAPORAN PEMESANAN</a>
+                    </li>
+                    <li class="{{ $jabatan == 'kurir' ? '' : 'hidden' }}">
+                        <a href="{{route('lapkur_home')}}"><i class="fa fa-file-text"></i> LAPORAN KURIR</a>
                     </li>
 				</ul>
             </li>
