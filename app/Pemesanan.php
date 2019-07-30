@@ -9,14 +9,18 @@ class Pemesanan extends Model
     protected $table = 'pemesanan';
 
     protected $fillable = [
-        'id_pemasaran', 'id_barang', 'jumlah_barang', 'ket'
+        'id_user', 'id_lokasi', 'id_barang', 'jumlah_barang', 'ket'
     ];
 
-    public function pemasaran(){
-        return $this->belongsTo(Pemasaran::class, 'id_pemasaran', 'id');
+    public function lokasi(){
+        return $this->elongsTo(Lokasi::class, 'id_lokasi', 'id');
     }
 
     public function barang(){
         return $this->belongsTo(Barang::class, 'id_barang', 'id');
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class, 'id_user', 'id');
     }
 }

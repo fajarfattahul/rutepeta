@@ -27,6 +27,7 @@
                             <th>No</th>
                             <th>Nama Barang</th>
                             <th>Kode Barang</th>
+                            <th>Harga</th>
                             <th>Action</th>
                         </tr>
 
@@ -39,6 +40,7 @@
                             <td>{{$no++}}</td>
                             <td>{{$brg->nama_barang}}</td>
                             <td>{{$brg->kd_barang}}</td>
+                            <td>Rp. {{$brg->harga}}</td>
                             <td>
                                 <a class="btn btn-light" href="{{ route('barang_edit', ['id' => $brg->id]) }}">Edit</a>
                                 <a class="btn btn-danger" href="{{ route('barang_delete', ['id' => $brg->id]) }}">Hapus</a>

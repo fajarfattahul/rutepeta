@@ -15,13 +15,9 @@ class Pemasaran extends Model
     public function user(){
         return $this->belongsTo(User::class, 'id_user','id');
     }
-
+    
     public function lokasi(){
         return $this->belongsTo(Lokasi::class, 'id_lokasi', 'id');
-    }
-
-    public function pemesanan(){
-        return $this->hasMany(Pemesanan::class);
     }
 
 }

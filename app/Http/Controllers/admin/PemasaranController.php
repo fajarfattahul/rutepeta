@@ -20,7 +20,7 @@ class PemasaranController extends Controller
 
     public function create(){
         $data['jabatan'] = Auth::user()->jabatan;
-        $data['user'] = User::all();
+        $data['user'] = User::where('jabatan', '=', 'sales')->get();
         $data['lokasi'] = Lokasi::all();
         // return \response($data);
         
@@ -43,7 +43,7 @@ class PemasaranController extends Controller
     public function edit($id){
         $data['jabatan'] = Auth::user()->jabatan;
         $data['pemasaran'] = Pemasaran::find($id);
-        $data['user'] = User::all();
+        $data['user'] = User::where('jabatan', '=', 'sales')->get();
         $data['lokasi'] = Lokasi::all();
         // return \response($data);
         return view('Pemasaran.edit', $data);

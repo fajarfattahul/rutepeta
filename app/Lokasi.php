@@ -15,4 +15,8 @@ class Lokasi extends Model
     public function pemasaran(){
         return $this->hasMany(Pemasaran::class);
     }
+
+    public function pemesanna(){
+        return $this->hasMany(Pemesanan::class);
+    }
 }

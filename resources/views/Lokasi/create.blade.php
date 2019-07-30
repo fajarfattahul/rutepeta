@@ -35,6 +35,7 @@
                                     <input class="form-control" type="text" id="longitude" name="longitude" placeholder="Nama Lokasi">
                                 </div>
                                 <div class="form-group" id="locationPicker" style="width: auto; height: 300px;"></div>
+                                
                             </div>
                             <!-- /.box-body -->
                             <div class="box-footer">

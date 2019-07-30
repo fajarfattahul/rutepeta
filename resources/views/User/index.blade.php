@@ -46,7 +46,9 @@
                             <td>{{$us->jk}}</td>
                             <td>
                                 <a href="{{ route('user_edit', ['id' => $us->id]) }}" class="btn btn-light">Edit</a>
-                                <a href="{{ route('user_delete', ['id' => $us->id]) }}" class="btn btn-danger">Hapus</a>
+                                @if ($us->jabatan != "admin")
+                                    <a href="{{ route('user_delete', ['id' => $us->id]) }}" class="btn btn-danger" >Hapus</a>                                    
+                                @endif
                             </td>
                         </tr>
                     @endforeach

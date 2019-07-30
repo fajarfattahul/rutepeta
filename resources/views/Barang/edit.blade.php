@@ -19,6 +19,10 @@
                             <label for="namalokasi">Kode Barang</label>
                             <input type="text" class="form-control" name="kd_barang" id="kodebarang" placeholder="Kode Barang" value="{{$barang->kd_barang}}">
                         </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Harga Barang</label>
+                            <input class="form-control" type="text" name="harga" placeholder="Harga Barang" value="{{$barang->harga}}">
+                        </div>
                     </div>
                     
                     <div class="box-footer">

@@ -30,7 +30,7 @@
                             <label for="longitudelokasi">Longitude</label>
                             <input type="text" class="form-control" id="longitude" name="longitude" placeholder="Longitude" value="{{$lokasi->longitude}}">
                         </div>
-                        <div class="form-group" id="locationPicker" style="width: auto; height: 300px;"></div>
+                        <div class="form-group" id="locationPicker" style="width: auto; height: 300px;" value="locationPicker"></div>
                     </div>
                     
                     <div class="box-footer">

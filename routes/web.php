@@ -10,9 +10,9 @@
 |
 */
 
-Route::get('/Home', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/', function () {
     return view('beranda');
@@ -88,6 +88,7 @@ Route::group(['namespace' => 'sales'], function () {
             Route::get('/', 'LaporanController@index')->name('laporan_home');
             Route::get('/edit/{id?}', 'LaporanController@edit')->name('laporan_edit');
             Route::post('/update/{id?}', 'LaporanController@update')->name('laporan_update');
+            Route::post('/store', 'PemesananController@store')->name('pemesanan_store');
         });
 
         //Pemesanan

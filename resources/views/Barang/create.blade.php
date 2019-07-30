@@ -23,6 +23,13 @@
                                     <label for="exampleInputEmail1">Kode Barang</label>
                                     <input class="form-control" type="text" name="kd_barang" placeholder="Kode Barang">
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Harga Barang</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Rp. </span>
+                                        <input class="form-control" type="text" name="harga" placeholder="Harga Barang Satuan">
+                                    </div>
+                                </div>
                             </div>
                             <!-- /.box-body -->
                             <div class="box-footer">

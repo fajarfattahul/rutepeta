@@ -6,7 +6,7 @@
         <div class="col-xs-12">           
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Data Laporan Pemasaran</h3>
+                    <h3 class="box-title">Data Pemasaran Sales</h3>
             
                     <div class="box-tools">
                         <div class="input-group input-group-sm" style="width: 150px;">
@@ -23,7 +23,7 @@
                     <table class="table table-hover"> 
                             <tr>
                                 <th>No</th>
-                                <th>Nama Pegawai</th>
+                                <th>Nama Sales</th>
                                 <th>Lokasi</th>
                                 <th>Wilayah</th>
                                 <th>Waktu Pemasaran</th>

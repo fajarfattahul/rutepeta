@@ -4,7 +4,7 @@
     
     <div class="row">
         <div class="col-xs-12">
-            <a href="{{ route('lokasi_create') }}" class="btn btn-primary">Tambah Data</a>
+            <a href="{{ route('lokasi_create') }}" class="btn btn-primary">Tambah Lokasi</a>
             <br><br>
             <div class="box">
                 <div class="box-header">
@@ -27,8 +27,6 @@
                             <th>No</th>
                             <th>Nama</th>
                             <th>Wilayah</th>
-                            <th>Latitude</th>
-                            <th>Longitude</th>
                             <th>Action</th>
                         </tr>
 
@@ -41,8 +39,6 @@
                             <td>{{$no++}}</td>
                             <td>{{$lks->nama_lokasi}}</td>
                             <td>{{$lks->wilayah}}</td>
-                            <td>{{$lks->latitude}}</td>
-                            <td>{{$lks->longitude}}</td>
                             <td>
                                 <a class="btn btn-light" href="{{ route('lokasi_edit', ['id' => $lks->id]) }}">Edit</a>
                                 <a class="btn btn-danger" href="{{ route('lokasi_delete', ['id' => $lks->id]) }}">Hapus</a>

@@ -25,6 +25,7 @@ class BarangController extends Controller
         $lokasi = new Barang;
         $lokasi->nama_barang = $request->nama_barang;
         $lokasi->kd_barang = $request->kd_barang;
+        $lokasi->harga = $request->harga;
         $lokasi->save();
 
         return redirect(route('barang_home'));
@@ -43,6 +44,7 @@ class BarangController extends Controller
         
         $barang->nama_barang = $request->nama_barang;
         $barang->kd_barang = $request->kd_barang;
+        $lokasi->harga = $request->harga;
         $barang->save();
 
         return redirect(route('barang_home'));

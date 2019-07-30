@@ -6,10 +6,12 @@ use App\User;
 use App\Lokasi;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class LaporanController extends Controller
 {
     public function index(){
+        $data['jabatan'] = Auth::user()->jabatan;
         $data['pemasaran'] = Pemasaran::with('user', 'lokasi')->get();
 
         return view('Laporan.index', $data);
@@ -17,6 +19,7 @@ class LaporanController extends Controller
     }
 
     public function edit($id){
+        $data['jabatan'] = Auth::user()->jabatan;
         $data['pemasaran'] = Pemasaran::find($id);
         $data['user'] = User::all();
         $data['lokasi'] = Lokasi::all();

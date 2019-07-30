@@ -22,5 +22,4 @@
     <link rel="stylesheet" href="http://cdnjs.buttflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
     
     <link rel="stylesheet" href="{{asset('assets/plugins/iCheck/square/blue.css')}}">
-
 </head>

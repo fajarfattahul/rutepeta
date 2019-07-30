@@ -17,8 +17,8 @@
                             <div class="form-group">
                                 <label for="id_user">Nama User</label>
                                 <select class="form-control select2" name="id_user" id="id_user" value="{{$pemasaran->id_user}}">
+                                    <option selected>Pilih..</option>
                                     @foreach ($user as $d)
-                                        <option selected>Pilih..</option>
                                         <option value="{{$d->id}}">{{$d->name}}</option>
                                     @endforeach
                                 </select>
@@ -26,8 +26,8 @@
                             <div class="form-group">
                                 <label for="id_lokasi">Lokasi</label>
                                 <select class="form-control select2" name="id_lokasi" id="id_lokasi" value="{{$pemasaran->id_lokasi}}">
+                                    <option selected>Pilih..</option>
                                     @foreach ($lokasi as $d)
-                                        <option selected>Pilih..</option>
                                         <option value="{{$d->id}}">{{$d->nama_lokasi}}</option>
                                     @endforeach
                                 </select>

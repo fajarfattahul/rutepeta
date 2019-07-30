@@ -40,4 +40,8 @@ class User extends Authenticatable
     public function pemasaran(){
         return $this ->hasMany(Pemasaran::class);
     }
+
+    public function pemesanan(){
+        return $this->hasMany(Pemesanan::class);
+    }
 }
