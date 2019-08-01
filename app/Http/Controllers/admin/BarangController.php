@@ -44,7 +44,7 @@ class BarangController extends Controller
         
         $barang->nama_barang = $request->nama_barang;
         $barang->kd_barang = $request->kd_barang;
-        $lokasi->harga = $request->harga;
+        $barang->harga = $request->harga;
         $barang->save();
 
         return redirect(route('barang_home'));

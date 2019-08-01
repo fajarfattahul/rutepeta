@@ -21,8 +21,10 @@ class PemesananController extends Controller
 
     public function create(){
         $data['jabatan'] = Auth::user()->jabatan;
+
         $data['lokasi'] = Lokasi::all();
         $data['barang'] = Barang::all();
+        $data['user'] = User::where('jabatan', '=', 'sales')->get();
 
         return view('Pemesanan.create', $data);
     }
@@ -31,6 +33,7 @@ class PemesananController extends Controller
 
         $pemesanan = new Pemesanan;
 
+        $pemesanan->id_user = $request->id_user;
         $pemesanan->id_barang = $request->id_barang;
         $pemesanan->jumlah_barang = $request->jumlah_barang;
         $pemesanan->id_lokasi = $request->id_lokasi;

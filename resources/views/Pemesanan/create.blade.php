@@ -16,6 +16,14 @@
                             @csrf
                             <div class="box-body">
                                 <div class="form-group">
+                                    <label for="id_user">Nama Sales</label>
+                                    <select class="form-control select2" name="id_barang" id="id_barang">
+                                        @foreach ($user as $d)
+                                            <option value="{{$d->id}}">{{$d->id_sales}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <label for="id_user">Nama Barang</label>
                                     <select class="form-control select2" name="id_barang" id="id_barang">
                                         @foreach ($barang as $d)
@@ -28,8 +36,12 @@
                                     <input class="form-control" type="number" name="jumlah_barang" placeholder="Jumlah Barang">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Nama Lokasi Pemesanan</label>
-                                    <input class="form-control" type="text" name="nama_lokasi" placeholder="Nama Lokasi">
+                                    <label for="id_lokasi">Lokasi Pemesanan</label>
+                                    <select class="form-control select2" name="id_lokasi" id="id_lokasi">
+                                        @foreach ($lokasi as $d)
+                                            <option value="{{$d->id}}">{{$d->nama_lokasi}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Latitude</label>
@@ -39,7 +51,12 @@
                                     <label for="exampleInputEmail1">Longitude</label>
                                     <input class="form-control" type="text" id="longitude" name="longitude" placeholder="Nama Lokasi">
                                 </div>
-                                <div class="form-group" id="locationPicker" style="width: auto; height: 300px;"></div>
+                                <div class="box-header with-border">
+                                    <div id='map'></div>
+                                    <pre id='info'></pre>
+                                    <pre id='coordinates' class='coordinates'></pre>
+                                </div>
+                                {{-- <div class="form-group" id="locationPicker" style="width: auto; height: 300px;"></div> --}}
                             </div>
                             <!-- /.box-body -->
                             <div class="box-footer">

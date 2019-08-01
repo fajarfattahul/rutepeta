@@ -44,7 +44,9 @@
 	});
 </script>
 
-<script>
+<script src="{{ asset('assets/dist/js/mapbox.js')}}"></script>
+
+{{-- <script>
 		
 		$(document).ready(function(){
 			OSMPICKER.initmappicker(-5.143348686965237, 119.40773963928223, 10, {
@@ -55,4 +57,4 @@
 			});
 		});
 
-</script>
+</script> --}}

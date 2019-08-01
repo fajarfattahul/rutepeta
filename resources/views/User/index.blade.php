@@ -37,7 +37,7 @@
                             $no = 1;
                         ?>
 
-                    @foreach ($users as $us)
+                    @foreach ($jabatan as $us)
                         <tr>
                             <th scope="row">{{$no++}}</th>
                             <td>{{$us->name}}</td>

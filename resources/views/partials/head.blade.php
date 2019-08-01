@@ -22,4 +22,12 @@
     <link rel="stylesheet" href="http://cdnjs.buttflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
     
     <link rel="stylesheet" href="{{asset('assets/plugins/iCheck/square/blue.css')}}">
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js'></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' type='text/css' /> 
+    <link rel="stylesheet" href="{{ asset('assets/dist/css/mapbox.css')}}">
+
+
 </head>
