@@ -5,7 +5,7 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-user"></i></a>				
+                <a href="#" data-toggle="control-sidebar"><i class="fa fa-user"></i></a>
             </div>
             <div class="pull-left info">
 				<p>{{ Auth::user()->name }}</p>

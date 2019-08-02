@@ -37,11 +37,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function pemasaran(){
-        return $this ->hasMany(Pemasaran::class);
+    // public function pemasaran(){
+    //     return $this ->hasMany(Pemasaran::class);
+    // }
+
+    public function lokasi()
+    {
+        return $this->belongsToMany('App\Lokasi', 'pemasaran', 'id_user', 'id_lokasi')->withPivot('waktu_pemasaran', 'ket');
     }
 
-    public function pemesanan(){
+    public function pemesanan()
+    {
         return $this->hasMany(Pemesanan::class);
     }
 }

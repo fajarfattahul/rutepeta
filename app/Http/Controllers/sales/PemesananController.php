@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\sales;
+
 use App\User;
 use App\Lokasi;
 use App\Barang;
@@ -11,7 +12,8 @@ use Illuminate\Support\Facades\Auth;
 
 class PemesananController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $data['jabatan'] = Auth::user()->jabatan;
         $data['pemesanan'] = Pemesanan::with('user', 'lokasi', 'barang')->get();
 
@@ -19,7 +21,8 @@ class PemesananController extends Controller
         // return \response($data);
     }
 
-    public function create(){
+    public function create()
+    {
         $data['jabatan'] = Auth::user()->jabatan;
 
         $data['lokasi'] = Lokasi::all();
@@ -28,18 +31,20 @@ class PemesananController extends Controller
         return view('Pemesanan.create', $data);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
         $pemesanan = new Pemesanan;
 
         $pemesanan->id_barang = $request->id_barang;
+        $pemesanan->id_user = Auth::user()->id;
         $pemesanan->jumlah_barang = $request->jumlah_barang;
         $pemesanan->id_lokasi = $request->id_lokasi;
         $pemesanan->latitude = $request->latitude;
         $pemesanan->longitude = $request->longitude;
         $pemesanan->ket = 'proses';
         $pemesanan->save();
-        
+
         return redirect(route('pemesanan_home'));
     }
 }
