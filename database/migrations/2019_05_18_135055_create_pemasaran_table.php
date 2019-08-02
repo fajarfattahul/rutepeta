@@ -14,10 +14,10 @@ class CreatePemasaranTable extends Migration
     {
         Schema::create('pemasaran', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('id_user');
-            $table->unsignedInteger('id_lokasi');
-            $table->date('waktu_pemasaran'); 
-            $table->enum('ket', ['proses', 'selesai', 'gagal']);           
+            $table->bigInteger('id_user')->unsigned();
+            $table->integer('id_lokasi')->unsigned();
+            $table->date('waktu_pemasaran');
+            $table->enum('ket', ['proses', 'selesai', 'gagal']);
             $table->timestamps();
         });
     }
