@@ -34,7 +34,7 @@
                                 <label for="ket">Keterangan</label>
                                 <select class="form-control select2" name="ket" id="ket" value="{{$pemasaran->ket}}">                                    
                                     <option value="proses">Sedang Proses</option>
-                                    <option value="terkirim">Sudah Terkirim</option>
+                                    <option value="selesai">Sudah Selesai</option>
                                     <option value="gagal">Tidak Terkirim</option>
                                 </select>
                             </div>

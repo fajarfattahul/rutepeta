@@ -20,7 +20,7 @@ class PemasaranController extends Controller
 
     public function create(){
         $data['jabatan'] = Auth::user()->jabatan;
-        $data['user'] = User::where('jabatan', '=', 'sales')->get();
+        $data['users'] = User::where('jabatan', '=', 'sales')->get();
         $data['lokasi'] = Lokasi::all();
         // return \response($data);
         

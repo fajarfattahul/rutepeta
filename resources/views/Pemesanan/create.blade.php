@@ -16,14 +16,6 @@
                             @csrf
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="id_user">Nama Sales</label>
-                                    <select class="form-control select2" name="id_barang" id="id_barang">
-                                        @foreach ($user as $d)
-                                            <option value="{{$d->id}}">{{$d->id_sales}}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="form-group">
                                     <label for="id_user">Nama Barang</label>
                                     <select class="form-control select2" name="id_barang" id="id_barang">
                                         @foreach ($barang as $d)

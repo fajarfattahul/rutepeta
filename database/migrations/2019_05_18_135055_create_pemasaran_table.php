@@ -17,7 +17,7 @@ class CreatePemasaranTable extends Migration
             $table->unsignedInteger('id_user');
             $table->unsignedInteger('id_lokasi');
             $table->date('waktu_pemasaran'); 
-            $table->enum('ket', ['proses', 'terkirim', 'gagal']);           
+            $table->enum('ket', ['proses', 'selesai', 'gagal']);           
             $table->timestamps();
         });
     }

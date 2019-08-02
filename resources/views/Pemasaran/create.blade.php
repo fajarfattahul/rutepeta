@@ -17,7 +17,7 @@
                             <div class="form-group">
                                 <label for="id_user">Nama User</label>
                                 <select class="form-control select2" name="id_user" id="id_user">
-                                    @foreach ($user as $d)
+                                    @foreach ($users as $d)
                                         <option value="{{$d->id}}">{{$d->name}}</option>
                                     @endforeach
                                 </select>
