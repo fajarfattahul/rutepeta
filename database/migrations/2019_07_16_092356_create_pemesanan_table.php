@@ -15,13 +15,13 @@ class CreatePemesananTable extends Migration
     {
         Schema::create('pemesanan', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('id_user');
-            $table->unsignedInteger('id_lokasi');
+            $table->bigInteger('id_user')->unsigned();
+            $table->integer('id_lokasi')->unsigned();
             $table->string('latitude', 30)->nullable();
             $table->string('longitude', 30)->nullable();
-            $table->unsignedInteger('id_barang');
+            $table->bigInteger('id_barang')->unsigned();
             $table->integer('jumlah_barang');
-            $table->enum('ket', ['proses', 'terkirim', 'gagal']);           
+            $table->enum('ket', ['proses', 'terkirim', 'gagal']);
             $table->timestamps();
         });
     }

@@ -15,7 +15,11 @@ class PemesananController extends Controller
     public function index()
     {
         $data['jabatan'] = Auth::user()->jabatan;
-        $data['pemesanan'] = Pemesanan::with('user', 'lokasi', 'barang')->get();
+        $data['pemesanan'] = Pemesanan::where('id_user', Auth::user()->id)->get();
+        // $data['pemesanan'] = Pemesanan::with('user', 'lokasi', 'barang')->get();
+        $data['barang'] = User::findOrfail(Auth::user()->id)->barang()->orderBy('nama_barang')->get();
+        $data['lokasi'] = User::findOrfail(Auth::user()->id)->lokasi()->orderBy('nama_lokasi')->get();
+        dd($data['pemesanan']);
 
         return view('Pemesanan.index', $data);
         // return \response($data);

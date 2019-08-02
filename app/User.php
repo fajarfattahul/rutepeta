@@ -46,8 +46,8 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Lokasi', 'pemasaran', 'id_user', 'id_lokasi')->withPivot('waktu_pemasaran', 'ket');
     }
 
-    public function pemesanan()
+    public function barang()
     {
-        return $this->hasMany(Pemesanan::class);
+        return $this->belongsToMany('App\Barang', 'pemesanan', 'id_user', 'id_barang')->withPivot('ket', 'jumlah_barang');
     }
 }
